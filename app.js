@@ -11,7 +11,7 @@ app.use(cookieParser());
 
 
 app.post('/', (req, res) => {
-    const userIP = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    const userIP = req.headers['x-forwarded-for'];
     if(!userIP){
         res.status(404).json(
             {
